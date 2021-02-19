@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SimpleList.ViewModel"
+             x:Class="SimpleList.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="*, *">
+        <Frame 
+            BackgroundColor="#2196F3" 
+            Padding="24" 
+            CornerRadius="0" 
+            Grid.Column="0" 
+            Grid.Row="0" 
+            Grid.ColumnSpan="4">
+
+            <Label Text="Welcome to Simple List"
+                   HorizontalTextAlignment="Center" 
+                   TextColor="White" 
+                   FontSize="36"/>
+        </Frame>
+
+
+        <Label Text="Name:"
+               Grid.Row="1"
+               Grid.Column="0"
+               Grid.ColumnSpan="1"
+               FontSize="Large"
+               HorizontalOptions="End"
+               VerticalTextAlignment="Center"/>
+        <Entry Keyboard="Text" 
+               Placeholder="Full Name" 
+               Grid.Row="1"
+               Grid.Column="1" 
+               Grid.ColumnSpan="3"
+               Text="{Binding Name}"/>
+
+        <Label Text="Email:"
+               Grid.Row="2"
+               Grid.Column="0"
+               Grid.ColumnSpan="1"
+               FontSize="Large"
+               HorizontalOptions="End"
+               VerticalTextAlignment="Center"/>
+        <Entry Keyboard="Text" 
+               Placeholder="Email@address.com"  
+               Grid.Row="2"
+               Grid.Column="1"
+               Grid.ColumnSpan="3"
+               Text="{Binding Address}"/>
+
+        <Label Text="Balance:"
+               Grid.Row="3"
+               Grid.Column="0"
+               Grid.ColumnSpan="1"
+               FontSize="Large"
+               HorizontalOptions="End"
+               VerticalTextAlignment="Center"/>
+        <Entry Keyboard="Numeric" 
+               Placeholder="eg. 200" 
+               Grid.Row="3"
+               Grid.Column="1"  
+               Grid.ColumnSpan="3"
+               Text="{Binding Balance}"/>
+
+        <Button Text="Clear"
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HeightRequest="65"
+                BackgroundColor="Red"
+                Command="{Binding ClearCommand}"/>
+
+        <Button Text="Save"
+                Grid.Row="4"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
+                HeightRequest="65"
+                BackgroundColor="Green"
+                Command="{Binding SaveCommand}"/>
+
+    </Grid>
+</ContentPage>

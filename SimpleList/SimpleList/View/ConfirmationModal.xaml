@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SimpleList.ViewModel"
+             x:Class="SimpleList.View.ConfirmationView">
+
+    <StackLayout Orientation="Vertical">
+        <Label FontSize="Title" HorizontalTextAlignment="Center" FontAttributes="Bold">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Thank you "/>
+                    <Span Text="{Binding Customer.name}"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label FontSize="Body" HorizontalTextAlignment="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="We have saved your email:  "/>
+                    <Span Text="{Binding Customer.address}"/>
+                    <Span Text=" with balance of: $"/>
+                    <Span Text="{Binding Customer.balance}"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </StackLayout>
+</ContentPage>
